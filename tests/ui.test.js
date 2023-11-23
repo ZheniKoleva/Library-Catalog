@@ -171,7 +171,7 @@ test('Login in with an empty password field', async ({ page }) => {
 });
 
 //Register page tests
-test.skip('Register with valid credentials', async ({ page }) => {
+test('Register with valid credentials', async ({ page }) => {
   await page.goto(registerPage);
 
   await page.fill("input[name=email]", newUser);
@@ -270,7 +270,7 @@ test('Register with a valid email and different passwords', async ({
 });
 
 //Add book page tests
-test.skip('Add book with correct data', async ({ page }) => {
+test('Add book with correct data', async ({ page }) => {
   await page.goto(loginPage);
 
   await page.fill("input[name=email]", username);
