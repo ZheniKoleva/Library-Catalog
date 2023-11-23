@@ -8,7 +8,7 @@
         "playwright": "npx playwright test tests/ui.test.js",
         "start-frontend": "http-server -a localhost -p 3000 -P http://localhost:3000? -c-1",
         "start-backend": "node server/server.js",
-        "start": "npm-run-all --parallel start-frontend start-backend"
+        "start": "npm-run start-frontend & start-backend"
     },
     "author": "",
     "license": "ISC",
