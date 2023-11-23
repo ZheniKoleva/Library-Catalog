@@ -18,7 +18,9 @@ jobs:
         with:
           node-version: 18.x
           cache: "npm"
-      - name: Start the application
-        run: npm run start
+      - name: Start the app
+        run: npm run start-frontend & npm run start-backend        
+      - name: Wait for app start  
+        run: sleep 10
       - name: Run the tests
         run: npm run playwright
