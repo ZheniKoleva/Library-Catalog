@@ -2,7 +2,7 @@ name: Library-Catalog CI/CD
 
 on:
   push:
-    branches: []
+    branches: ["main"]
   pull_request:
     branches: ["main"]
   workflow_dispatch:
@@ -28,12 +28,9 @@ jobs:
       - name: Run the tests
         run: npm run test-playwright
   
-  deploy:
+  deploy-backend:
     runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'pull_request' &&
-      github.event.action == 'closed' &&
-      github.event.pull_request.base.ref == 'main'  
+    needs: build  
     steps:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
